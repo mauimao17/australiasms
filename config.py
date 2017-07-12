@@ -11,7 +11,7 @@ class Config(object):
 
 class Auth(object):
 	CLIENT_ID = ('KEY')
-	CLIENT_SECRET = SECRET'
+	CLIENT_SECRET = 'SECRET'
 	REDIRECT_URI = 'https://localhost:5000/authorize/google'
 	AUTH_URI = 'https://accounts.google.com/o/oauth2/auth'
 	TOKEN_URI = 'https://accounts.google.com/o/oauth2/token'

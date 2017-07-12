@@ -7,7 +7,6 @@ from flask import session
 from flask import g
 from views.__api__ import api
 from views.__authenticate__ import auth
-from config import google_client_id, google_client_secret
 
 app = Flask(__name__)
 app.config.from_object('config.Config')
