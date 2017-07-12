@@ -5,15 +5,19 @@ from flask import redirect
 from flask import url_for
 from flask import session 
 from flask import g
-from sqlalchemy.dialects.postgresql import JSON, ARRAY
-
+from views.__api__ import api
+from views.__authenticate__ import auth
+from config import google_client_id, google_client_secret
 
 app = Flask(__name__)
 app.config.from_object('config.Config')
 
+app.register_blueprint(api, url_prefix='/api/v1')
+app.register_blueprint(auth, url_prefix='/authorize')
+
 @app.before_request
 def prepareRequest():
-	session['user'] = None
+	session.update(user=None)
 
 @app.route('/')
 def index():
