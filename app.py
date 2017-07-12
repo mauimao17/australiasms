@@ -19,7 +19,6 @@ def prepareRequest():
 def index():
 	return render_template('index.html')
 
-
 #--------------------
 @app.errorhandler(404)
 def pageNotFound(e):
